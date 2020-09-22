@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>Visual Basic Stacks v1.0 Readme</title>
+	<meta name="GENERATOR" content="My brain; screw WYSIWYG!! ;)" />
+</head>
+<body>
+
+<center><h1>Visual Basic Stacks</h1>v1.0 Readme</center>
+<hr />
+<br />
+
+Ok, I suppose I should actually write how to use these things, so yeah. ;)<br />
+<br />
+Let's start with a basic example of using each stack.  This is actually really, really
+easy :o<br />
+<br />
+First up, dump the three stack classes CStringStack, CLongStack and CStack into a project.
+Now, find somewhere in your code to add some dummy code (just for demonstration purposes,
+like maybe on a command button or something).  Put the following in:<br />
+<br />
+<font face="Courier New, Courier, mono">
+Dim sstkTemp As CStringStack<br />
+Dim lstkTemp As CLongStack<br />
+Dim stkTemp As CStack<br />
+<br />
+Set sstkTemp = New CStringStack<br />
+Set lstkTemp = New CLongStack<br />
+Set stkTemp = New CStack<br />
+<br />
+</font>
+Now that's how you create your stacks.  To use them, since they all use the same methods,
+I'll juse use the long stack.<br />
+<br />
+<font face="Courier New, Courier, mono">
+With lstkTemp<br />
+&nbsp;&nbsp;.Push h1543&amp;<br />
+&nbsp;&nbsp;.Push hA632&amp;<br />
+&nbsp;&nbsp;.Push h24FF&amp;<br />
+&nbsp;&nbsp;' We just 'pushed' three numbers onto the stack.  Now, let's pop them off,<br />
+&nbsp;&nbsp;' debugging the output as we go<br />
+&nbsp;&nbsp;Debug.Print .Pop<br />
+&nbsp;&nbsp;Debug.Print .Pop<br />
+&nbsp;&nbsp;Debug.Print .Pop<br />
+End With<br />
+<br />
+</font>
+The above code would generate the following in the Immediate window:<br />
+<br />
+<font face="Courier New, Courier, mono">
+5443<br />
+42546<br />
+9471<br />
+<br />
+</font>
+The only other thing you need to know about is the CStringStack.DumpStack() method.  It
+takes a delimiter as an argument, and dumps the entire stack from bottom to top.  For
+example, a stack with the following pushed on (in that order): "C:", "WINNT", "SYSTEM"
+that had the following call made: DumpStack("\") would return:<br />
+<br />
+<font face="Courier New, Courier, mono">
+C:\WINNT\SYSTEM<br />
+<br />
+</font>
+Well, that's it for this really crappy readme.  Sorry, but I'm feeling lazy right now ;)<br />
+<br />
+<hr />
+<center>Infinity bottles of beer on the wall,<br />
+Infinity bottles of beer.<br />
+Knock one down, pass it around,<br />
+Infinity bottles of beer on the wall.</center>
+
+</body>
+</html>
